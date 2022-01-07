@@ -5,7 +5,7 @@ import { LayoutErrorBoundary } from "src/layout/LayoutErrorBoundary";
 
 export const FixedLayout: CustomLayout = (page) => {
   return (
-    <div className="grid mx-auto max-w-screen-md min-h-screen grid-rows-[auto,1fr,auto]">
+    <div className="grid grid-rows-[auto,1fr,auto] mx-auto max-w-screen-md min-h-screen">
       <Header />
       <main className="px-4 bg-teal-200">
         <LayoutErrorBoundary>{page}</LayoutErrorBoundary>

@@ -6,7 +6,7 @@ import type { ButtonVariant } from "./type";
 export const useButtonClass = (className?: string, variant?: ButtonVariant) => {
   const classes = useMemo(() => {
     return clsx(
-      "grid place-items-center focus-visible:ring-2 transition duration-200 ease-in-out focus:outline-none",
+      "grid place-items-center focus:outline-none focus-visible:ring-2 transition duration-200 ease-in-out",
       {
         "border focus:ring-2 focus:ring-blue-400": variant === "outline",
         "hover:text-blue-400 focus-visible:text-blue-400 hover:bg-blue-50 focus-visible:bg-blue-50 focus-visible:ring-blue-400":
