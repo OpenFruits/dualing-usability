@@ -2,11 +2,13 @@ import type { CustomNextPage } from "next";
 import Head from "next/head";
 import { Button } from "src/component/Button";
 import { FluidLayout } from "src/layout/FluidLayout";
+import { countState, useCount } from "src/state/count";
+import { useText } from "src/state/text";
 
 const Home: CustomNextPage = () => {
-  const handleClick = () => {
-    alert("Hello World!");
-  };
+  const { count } = useCount();
+  const { text } = useText();
+  const handleClick = countState.increment;
 
   return (
     <>
@@ -17,8 +19,10 @@ const Home: CustomNextPage = () => {
       <div className="space-y-4">
         <h2>Index</h2>
         <Button variant="solid-blue" className="p-2 rounded" onClick={handleClick}>
-          show alert!
+          Count up!
         </Button>
+        <p>{count}</p>
+        <p>{text}</p>
       </div>
     </>
   );
