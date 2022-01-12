@@ -2,6 +2,7 @@ import "../src/style/index.css";
 
 import type { CustomAppProps } from "next/app";
 import Head from "next/head";
+import { Toaster } from "react-hot-toast";
 
 const MyApp = (props: CustomAppProps) => {
   const getLayout =
@@ -16,6 +17,7 @@ const MyApp = (props: CustomAppProps) => {
         <meta name="description" content="Starter Template by Next.js and TailwindCSS." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Toaster />
       {getLayout(<props.Component {...props.pageProps} />)}
     </>
   );

@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-handler-names */
 import type { CustomNextPage } from "next";
 import Head from "next/head";
 import { useState } from "react";
