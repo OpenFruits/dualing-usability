@@ -1,16 +1,16 @@
 import { proxy, useSnapshot } from "valtio";
 
 type SearchState = {
-  search: string;
-  setText: (arg: string) => string;
+  result: string;
+  setResult: (arg: string) => string;
 };
 
-export const textState: SearchState = proxy<SearchState>({
-  search: "全学生",
-  setText: (newSearch) => (textState.search = newSearch),
+export const searchState: SearchState = proxy<SearchState>({
+  result: "全学生",
+  setResult: (newResult) => (searchState.result = newResult),
 });
 
 export const useText = () => {
-  const { search } = useSnapshot(textState);
-  return { search };
+  const { result } = useSnapshot(searchState);
+  return { result };
 };
