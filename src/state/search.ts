@@ -10,7 +10,7 @@ export const searchState: SearchState = proxy<SearchState>({
   setResult: (newResult) => (searchState.result = newResult),
 });
 
-export const useText = () => {
+export const useResult = () => {
   const { result } = useSnapshot(searchState);
   return { result };
 };
