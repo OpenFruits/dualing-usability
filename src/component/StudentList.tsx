@@ -1,10 +1,10 @@
 import type { VFC } from "react";
 import { Card } from "src/component/Card";
 import { studentList } from "src/data/studentList";
-
-const result = "全学生";
+import { useResult } from "src/state/search";
 
 export const StudentList: VFC = () => {
+  const { result } = useResult();
   return (
     <div className="">
       <h1 className="pb-4 text-3xl font-bold border-b border-gray-500">学生一覧</h1>
