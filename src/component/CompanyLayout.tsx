@@ -1,6 +1,7 @@
 import { Switch } from "@headlessui/react";
 import cc from "classcat";
 import type { VFC } from "react";
+import { useEffect } from "react";
 import { useCallback, useState } from "react";
 import Select from "react-select";
 import { Inform } from "src/component/company/Inform";
@@ -11,6 +12,7 @@ import { industryOptions } from "src/constants/options/industry";
 import { locationOptions } from "src/constants/options/location";
 import { occupationOptions } from "src/constants/options/occupation";
 import { universityOptions } from "src/constants/options/university";
+import { searchState } from "src/state/search";
 
 type Props = {
   children: React.ReactNode;
@@ -61,6 +63,15 @@ export const CompanyLayout: VFC<Props> = (props) => {
     if (option === "scout") setIsScout(!isScout);
     if (option === "match") setIsMatch(!isMatch);
   };
+
+  const updateResult = searchState.setResult;
+
+  useEffect(() => {
+    if (showOption === "bookmark") updateResult("保存済みの学生");
+    if (showOption === "scout") updateResult("スカウト済みの学生");
+    if (showOption === "match") updateResult("マッチしている学生");
+    if (showOption === "") updateResult("全学生");
+  }, [showOption, updateResult]);
 
   const inputUniversity = useCallback((e) => setUniversity(e?.value), [setUniversity]);
 
