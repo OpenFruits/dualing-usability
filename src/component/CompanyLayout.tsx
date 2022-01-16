@@ -85,8 +85,16 @@ export const CompanyLayout: VFC<Props> = (props) => {
 
   const inputAdvantages = useCallback((e) => setAdvantages(e?.value), [setAdvantages]);
 
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
-  const search = () => {};
+  const search = () => {
+    const universityResult = university ? `【${university}】` : "";
+    const importantResult = important ? `【${important}】` : "";
+    const industriesResult = industries ? `【${industries}】` : "";
+    const occupationsResult = occupations ? `【${occupations}】` : "";
+    const locationsResult = locations ? `【${locations}】` : "";
+    const advantagesResult = advantages ? `【${advantages}】` : "";
+    const result = `${universityResult}${importantResult}${industriesResult}${occupationsResult}${locationsResult}${advantagesResult}`;
+    updateResult(result === "" ? "全学生" : result);
+  };
 
   return (
     <div>
