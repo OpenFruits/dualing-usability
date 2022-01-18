@@ -82,7 +82,7 @@ export const Card: VFC<Props> = (props) => {
         <span className="text-xs font-bold">希望勤務地：</span>
         {props.student.locations.map((item: string, index: number) => (
           <span
-            key={`occupation_${index}`}
+            key={`location_${index}`}
             className="inline-block py-1 px-2 mr-2 text-xs font-semibold text-gray-700 bg-gray-200 rounded-full"
           >
             {`${item}`}
