@@ -7,13 +7,13 @@ import Select from "react-select";
 import { Button } from "src/component/Button";
 import { Header } from "src/component/Header";
 import { Input } from "src/component/Input";
+import { studentList } from "src/constants/data/studentList";
 import { advantageOptions } from "src/constants/options/advantage";
 import { importantOptions } from "src/constants/options/important";
 import { industryOptions } from "src/constants/options/industry";
 import { locationOptions } from "src/constants/options/location";
 import { occupationOptions } from "src/constants/options/occupation";
 import type { EditForms as Inputs } from "src/constants/types";
-import { studentList } from "src/data/studentList";
 
 const Edit: NextPage = () => {
   const router = useRouter();
