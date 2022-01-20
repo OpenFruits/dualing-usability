@@ -22,7 +22,7 @@ export const Card: VFC<Props> = (props) => {
   };
 
   return (
-    <div className="overflow-hidden bg-white rounded border shadow-md">
+    <div className="overflow-hidden bg-white rounded border">
       <div
         className="relative w-full h-52 bg-cover cursor-pointer"
         style={{ backgroundImage: `url(/student.jpg)` }}
