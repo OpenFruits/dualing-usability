@@ -7,18 +7,14 @@ const Home: CustomNextPage = () => {
   return (
     <>
       <Head>
-        <title>Index Page</title>
+        <title>Dualing</title>
       </Head>
 
-      <div className="space-y-4">
-        <h2>Index</h2>
-
-        <main>
-          <CompanyLayout>
-            <StudentList />
-          </CompanyLayout>
-        </main>
-      </div>
+      <main>
+        <CompanyLayout>
+          <StudentList />
+        </CompanyLayout>
+      </main>
     </>
   );
 };
