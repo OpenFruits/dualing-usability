@@ -104,17 +104,17 @@ export const Card: VFC<Props> = (props) => {
         <Link href={`/student/${props.student.uid}`}>
           <a className="mr-2">
             {props.student.relation === "no" && (
-              <button className="p-2 m-auto text-xs font-bold tracking-wider text-center text-white bg-blue-500 hover:bg-blue-400 rounded focus:outline-none cursor-pointer lg:mx-0 lg:text-sm">
+              <button className="p-2 m-auto text-xs font-bold tracking-wider text-center text-white bg-blue-500 hover:bg-blue-400 rounded focus:outline-none cursor-pointer lg:mx-0">
                 詳細・スカウト画面へ
               </button>
             )}
             {props.student.relation === "scout" && (
-              <button className="p-2 m-auto text-xs font-bold tracking-wider text-center text-white bg-blue-500 hover:bg-blue-400 rounded focus:outline-none cursor-pointer lg:mx-0 lg:text-sm">
+              <button className="p-2 m-auto text-xs font-bold tracking-wider text-center text-white bg-blue-500 hover:bg-blue-400 rounded focus:outline-none cursor-pointer lg:mx-0">
                 詳細画面へ
               </button>
             )}
             {props.student.relation === "match" && (
-              <button className="p-2 m-auto text-xs font-bold tracking-wider text-center text-white bg-blue-500 hover:bg-blue-400 rounded focus:outline-none cursor-pointer lg:mx-0 lg:text-sm">
+              <button className="p-2 m-auto text-xs font-bold tracking-wider text-center text-white bg-blue-500 hover:bg-blue-400 rounded focus:outline-none cursor-pointer lg:mx-0">
                 詳細・チャット画面へ
               </button>
             )}
@@ -122,7 +122,7 @@ export const Card: VFC<Props> = (props) => {
         </Link>
         <button
           onClick={bookmark}
-          className="flex pr-2 m-auto text-xs font-bold tracking-wider text-center text-white bg-blue-500 hover:bg-blue-400 rounded focus:outline-none cursor-pointer lg:mx-0 lg:text-sm"
+          className="flex pr-2 m-auto text-xs font-bold tracking-wider text-center text-white bg-blue-500 hover:bg-blue-400 rounded focus:outline-none cursor-pointer lg:mx-0"
         >
           <BookmarkIcon className="m-1 w-6 h-6" />
           {isBookmark ? <p className="py-2">保存済み</p> : <p className="py-2">保存して後で見る</p>}
