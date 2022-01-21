@@ -9,8 +9,8 @@ import toast from "react-hot-toast";
 import { Button } from "src/component/Button";
 import { Chat } from "src/component/company/Chat";
 import { Header } from "src/component/Header";
+import { studentList } from "src/constants/data/studentList";
 import type { Student } from "src/constants/types";
-import { studentList } from "src/data/studentList";
 
 const StudentId: NextPage = () => {
   const router = useRouter();

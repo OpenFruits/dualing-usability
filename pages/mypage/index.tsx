@@ -6,7 +6,7 @@ import { Inform } from "src/component/student/Inform";
 import { MatchingList } from "src/component/student/MatchingList";
 import { Profile } from "src/component/student/Profile";
 import { ScoutList } from "src/component/student/ScoutList";
-import { studentList } from "src/data/studentList";
+import { studentList } from "src/constants/data/studentList";
 
 const Mypage: NextPage = () => {
   return (

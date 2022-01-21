@@ -1,6 +1,6 @@
 import type { VFC } from "react";
 import { Card } from "src/component/Card";
-import { studentList } from "src/data/studentList";
+import { studentList } from "src/constants/data/studentList";
 import { useResult } from "src/state/search";
 
 export const StudentList: VFC = () => {

@@ -2,8 +2,8 @@ import { Disclosure } from "@headlessui/react";
 import { MinusIcon, PlusIcon } from "@heroicons/react/solid";
 import type { VFC } from "react";
 import { MatchingCompany } from "src/component/student/MatchingCompany";
+import { companyList } from "src/constants/data/companyList";
 import type { Company } from "src/constants/types";
-import { companyList } from "src/data/companyList";
 
 export const MatchingList: VFC = () => {
   const companies: Company[] = companyList;

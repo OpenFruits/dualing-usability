@@ -1,8 +1,8 @@
 import cc from "classcat";
 import type { VFC } from "react";
 import { useCallback, useEffect, useRef, useState } from "react";
-import type { Message } from "src/data/chatList";
-import { chatList } from "src/data/chatList";
+import type { Message } from "src/constants/data/chatList";
+import { chatList } from "src/constants/data/chatList";
 
 type Props = {
   studentName: string;

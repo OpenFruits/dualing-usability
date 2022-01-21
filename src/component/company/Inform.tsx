@@ -6,8 +6,8 @@ import type { VFC } from "react";
 import { useEffect, useState } from "react";
 import { Button } from "src/component/Button";
 import { Drawer } from "src/component/Drawer";
+import { noticeList } from "src/constants/data/noticeList";
 import type { Notice } from "src/constants/types";
-import { noticeList } from "src/data/noticeList";
 
 export const Inform: VFC = () => {
   const [isOpen, setIsOpen] = useState(false);

@@ -6,7 +6,7 @@ import { Button } from "src/component/Button";
 import { Header } from "src/component/Header";
 import { Layout } from "src/component/Layout";
 import { Chat } from "src/component/student/Chat";
-import { companyList } from "src/data/companyList";
+import { companyList } from "src/constants/data/companyList";
 
 const CompanyId: NextPage = () => {
   const router = useRouter();

@@ -5,7 +5,7 @@ import type { VFC } from "react";
 import { Fragment, useState } from "react";
 import { Button } from "src/component/Button";
 import { Layout } from "src/component/Layout";
-import { studentList } from "src/data/studentList";
+import { studentList } from "src/constants/data/studentList";
 
 export const Profile: VFC = () => {
   const router = useRouter();
