@@ -1,11 +1,11 @@
 import { Switch } from "@headlessui/react";
 import cc from "classcat";
 import type { VFC } from "react";
-import { useEffect } from "react";
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import Select from "react-select";
 import { Inform } from "src/component/company/Inform";
 import { Header } from "src/component/Header";
+import { companyList } from "src/constants/data/companyList";
 import { advantageOptions } from "src/constants/options/advantage";
 import { importantOptions } from "src/constants/options/important";
 import { industryOptions } from "src/constants/options/industry";
@@ -18,11 +18,11 @@ type Props = {
   children: React.ReactNode;
 };
 
-const currentUser = {
-  name: "株式会社サンプル",
-};
+const currentUser = companyList[0];
 
 export const CompanyLayout: VFC<Props> = (props) => {
+  const updateResult = searchState.setResult;
+
   const [showOption, setShowOption] = useState<string>("");
   const [isBookmark, setIsBookmark] = useState(false);
   const [isScout, setIsScout] = useState(false);
@@ -33,7 +33,6 @@ export const CompanyLayout: VFC<Props> = (props) => {
   const [occupations, setOccupations] = useState(undefined);
   const [locations, setLocations] = useState(undefined);
   const [advantages, setAdvantages] = useState(undefined);
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [searchOptions, setSearchOptions] = useState([
     university,
     important,
@@ -42,8 +41,8 @@ export const CompanyLayout: VFC<Props> = (props) => {
     locations,
     advantages,
   ]);
-  // eslint-disable-next-line @typescript-eslint/naming-convention
-  const canSearch: boolean =
+
+  const hasSearch: boolean =
     university !== searchOptions[0] ||
     important !== searchOptions[1] ||
     industries !== searchOptions[2] ||
@@ -64,28 +63,24 @@ export const CompanyLayout: VFC<Props> = (props) => {
     if (option === "match") setIsMatch(!isMatch);
   };
 
-  const updateResult = searchState.setResult;
-
   useEffect(() => {
     if (showOption === "bookmark") updateResult("保存済みの学生");
     if (showOption === "scout") updateResult("スカウト済みの学生");
     if (showOption === "match") updateResult("マッチしている学生");
-    if (showOption === "") updateResult("全学生");
+    if (showOption === "") search();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [showOption, updateResult]);
 
+  // 各オプションの選択
   const inputUniversity = useCallback((e) => setUniversity(e?.value), [setUniversity]);
-
   const inputImportant = useCallback((e) => setImportant(e?.value), [setImportant]);
-
   const inputIndustries = useCallback((e) => setIndustries(e?.value), [setIndustries]);
-
   const inputOccupations = useCallback((e) => setOccupations(e?.value), [setOccupations]);
-
   const inputLocations = useCallback((e) => setLocations(e?.value), [setLocations]);
-
   const inputAdvantages = useCallback((e) => setAdvantages(e?.value), [setAdvantages]);
 
   const search = () => {
+    setSearchOptions([university, important, industries, occupations, locations, advantages]);
     const universityResult = university ? `【${university}】` : "";
     const importantResult = important ? `【${important}】` : "";
     const industriesResult = industries ? `【${industries}】` : "";
@@ -93,8 +88,21 @@ export const CompanyLayout: VFC<Props> = (props) => {
     const locationsResult = locations ? `【${locations}】` : "";
     const advantagesResult = advantages ? `【${advantages}】` : "";
     const result = `${universityResult}${importantResult}${industriesResult}${occupationsResult}${locationsResult}${advantagesResult}`;
-    updateResult(result === "" ? "全学生" : result);
+    result.length && updateResult(result);
+    if (result === "" && showOption === "bookmark") updateResult("保存済みの学生");
+    if (result === "" && showOption === "scout") updateResult("スカウト済みの学生");
+    if (result === "" && showOption === "match") updateResult("マッチしている学生");
+    if (result === "" && showOption === "") updateResult("全学生");
   };
+
+  const SELECT_ITEMS = [
+    { id: "university", ja: "大学", options: universityOptions, input: inputUniversity },
+    { id: "important", ja: "会社選びの軸", options: importantOptions, input: inputImportant },
+    { id: "industry", ja: "興味のある業界", options: industryOptions, input: inputIndustries },
+    { id: "occupation", ja: "興味のある職種", options: occupationOptions, input: inputOccupations },
+    { id: "location", ja: "希望勤務地", options: locationOptions, input: inputLocations },
+    { id: "advantage", ja: "強み", options: advantageOptions, input: inputAdvantages },
+  ];
 
   return (
     <div>
@@ -106,76 +114,29 @@ export const CompanyLayout: VFC<Props> = (props) => {
           <div className="pb-2 mb-4 border-b">
             <div>
               <span className="text-gray-700">条件を指定して検索</span>
-              <Select
-                id={"university"}
-                instanceId={"university"}
-                inputId={"university"}
-                isClearable
-                placeholder="大学を指定"
-                options={universityOptions}
-                onChange={inputUniversity}
-                className="mb-2"
-              />
-              <Select
-                id={"important"}
-                instanceId={"important"}
-                inputId={"important"}
-                isClearable
-                placeholder="会社選びの軸を指定"
-                options={importantOptions}
-                onChange={inputImportant}
-                className="mb-2"
-              />
-              <Select
-                id={"industry"}
-                instanceId={"industry"}
-                inputId={"industry"}
-                isClearable
-                placeholder="興味のある業界を指定"
-                options={industryOptions}
-                onChange={inputIndustries}
-                className="my-2"
-              />
-              <Select
-                id={"occupation"}
-                instanceId={"occupation"}
-                inputId={"occupation"}
-                isClearable
-                placeholder="興味のある職種を指定"
-                options={occupationOptions}
-                onChange={inputOccupations}
-                className="my-2"
-              />
-              <Select
-                id={"locations"}
-                instanceId={"locations"}
-                inputId={"locations"}
-                isClearable
-                placeholder="希望勤務地を指定"
-                options={locationOptions}
-                onChange={inputLocations}
-                className="my-2"
-              />
-              <Select
-                id={"advantage"}
-                instanceId={"advantage"}
-                inputId={"advantage"}
-                isClearable
-                placeholder="強みを指定"
-                options={advantageOptions}
-                onChange={inputAdvantages}
-                className="my-2"
-              />
+              {SELECT_ITEMS.map((item) => (
+                <Select
+                  key={item.id}
+                  id={item.id}
+                  instanceId={item.id}
+                  inputId={item.id}
+                  isClearable
+                  placeholder={`${item.ja}を指定`}
+                  options={item.options}
+                  onChange={item.input}
+                  className="mb-2"
+                />
+              ))}
             </div>
             <div className="flex justify-end">
               <button
-                disabled={!canSearch}
+                disabled={!hasSearch}
                 onClick={search}
                 className={cc([
                   "text-white font-bold text-sm p-2 ml-2 rounded",
                   {
-                    ["bg-theme hover:bg-theme-light focus:outline-none"]: canSearch,
-                    ["bg-theme-light cursor-default"]: !canSearch,
+                    ["bg-theme hover:bg-theme-light focus:outline-none"]: hasSearch,
+                    ["bg-theme-light cursor-default"]: !hasSearch,
                   },
                 ])}
               >
