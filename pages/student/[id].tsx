@@ -107,7 +107,7 @@ const StudentId: NextPage = () => {
           </div>
         </Dialog>
       </Transition>
-      <Header href={`/`} pageTitle="学生詳細ページ" />
+      <Header pageTitle="学生詳細ページ" />
       <div className="flex">
         <aside className="fixed top-14 left-0 p-4 w-72 h-screen border-r">
           <h2 className="pb-2 mb-4 text-2xl border-b">{`${currentUser?.name} 様`}</h2>

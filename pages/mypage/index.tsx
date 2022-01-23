@@ -11,7 +11,7 @@ import { studentList } from "src/constants/data/studentList";
 const Mypage: NextPage = () => {
   return (
     <div className="box-border relative pb-[140px] min-h-screen">
-      <Header pageTitle="マイページ" href={`/`} />
+      <Header pageTitle="マイページ" />
       <div className="m-auto sm:w-2/3">
         <Inform />
         <Profile />
