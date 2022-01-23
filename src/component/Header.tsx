@@ -4,12 +4,15 @@ import type { VFC } from "react";
 import { Button } from "src/component/Button";
 
 type Props = {
-  pageTitle: string;
-  href: string;
+  pageTitle?: string;
+  href?: string;
 };
 
 export const Header: VFC<Props> = (props) => {
   const router = useRouter();
+  // eslint-disable-next-line react/destructuring-assignment
+  const { pageTitle = "", href = "/" } = props;
+
   return (
     <div className="pb-14">
       <header className="fixed top-0 z-30 w-full h-14 bg-white border-b">
@@ -20,11 +23,11 @@ export const Header: VFC<Props> = (props) => {
             loading="eager"
             width={185}
             height={56}
-            onClick={() => router.push(props.href)}
+            onClick={() => router.push(href)}
             className="cursor-pointer"
           />
           {props.pageTitle ? (
-            <div className="mr-2 text-lg font-bold">{props.pageTitle}</div>
+            <div className="mr-2 text-lg font-bold">{pageTitle}</div>
           ) : (
             <div className="mx-4">
               <Button className="rounded" onClick={() => router.push("/mypage")}>
