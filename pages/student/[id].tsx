@@ -20,7 +20,6 @@ const StudentId: NextPage = () => {
   const onOpen = () => setIsOpen(true);
 
   const student: Student = studentList[Number(id) - 1];
-  // const [student, setStudent] = useState<Student>(studentList[Number(id) - 1]);
   const [isBookmark, setIsBookmark] = useState(false);
 
   const currentUser = { name: "株式会社サンプル" };
