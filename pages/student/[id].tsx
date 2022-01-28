@@ -167,7 +167,7 @@ const StudentId: NextPage = () => {
               </div>
               {student?.relation === "match" && <Chat studentName={`${student?.firstName} ${student?.lastName}`} />}
               {isLoading && (
-                <div className="aspect-video grid place-items-center m-2 text-2xl text-gray-800 bg-gray-400">
+                <div className="aspect-video grid place-items-center my-4 text-2xl text-gray-800 bg-gray-400">
                   Loading...
                 </div>
               )}
