@@ -29,7 +29,7 @@ export const Card: VFC<Props> = (props) => {
         onClick={() => router.push(`/student/${props.student.uid}`)}
       >
         {props.student.relation === "scout" && (
-          <div className="absolute top-0 right-0 p-2 m-2 text-sm font-bold text-white bg-green-500 rounded-full">
+          <div className="absolute top-0 right-0 p-2 m-2 text-sm font-bold text-white bg-emerald-500 rounded-full">
             スカウト中
           </div>
         )}
