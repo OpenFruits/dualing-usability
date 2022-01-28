@@ -48,7 +48,6 @@ export type Student = {
   advantages: string[];
   comment: string;
   vimeoUrl: string;
-  thumbnailUrl: string;
   relation: "no" | "scout" | "match";
 };
 
