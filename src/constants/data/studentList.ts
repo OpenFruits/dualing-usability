@@ -16,9 +16,7 @@ export const studentList: Student[] = [
     locations: ["東京都", "その他"],
     advantages: ["粘り強さ", "リーダーシップ"],
     comment: "よろしくお願いします。",
-    vimeoUrl: "https://vimeo.com/576374766/5f93123e40",
-    thumbnailUrl:
-      "https://i.vimeocdn.com/video/1192215092-21d45b2ad45578049ed390993dd01198f4f5049a815cf7375febba6f9a77bb48-d_640",
+    vimeoUrl: "https://vimeo.com/671016095/a552368238",
     relation: "match",
   },
   {
@@ -37,8 +35,6 @@ export const studentList: Student[] = [
     advantages: ["達成欲"],
     comment: "よろしくお願いします。",
     vimeoUrl: "https://vimeo.com/576374766/5f93123e40",
-    thumbnailUrl:
-      "https://i.vimeocdn.com/video/1192215092-21d45b2ad45578049ed390993dd01198f4f5049a815cf7375febba6f9a77bb48-d_640",
     relation: "no",
   },
   {
@@ -57,8 +53,6 @@ export const studentList: Student[] = [
     advantages: ["努力家", "積極英", "ポシティブ"],
     comment: "よろしくお願いします。",
     vimeoUrl: "https://vimeo.com/576374766/5f93123e40",
-    thumbnailUrl:
-      "https://i.vimeocdn.com/video/1192215092-21d45b2ad45578049ed390993dd01198f4f5049a815cf7375febba6f9a77bb48-d_640",
     relation: "scout",
   },
   {
@@ -77,8 +71,6 @@ export const studentList: Student[] = [
     advantages: ["達成欲"],
     comment: "よろしくお願いします。",
     vimeoUrl: "https://vimeo.com/576374766/5f93123e40",
-    thumbnailUrl:
-      "https://i.vimeocdn.com/video/1192215092-21d45b2ad45578049ed390993dd01198f4f5049a815cf7375febba6f9a77bb48-d_640",
     relation: "match",
   },
   {
@@ -97,8 +89,6 @@ export const studentList: Student[] = [
     advantages: ["明るい", "ムードメーカー"],
     comment: "よろしくお願いします。",
     vimeoUrl: "https://vimeo.com/576374766/5f93123e40",
-    thumbnailUrl:
-      "https://i.vimeocdn.com/video/1192215092-21d45b2ad45578049ed390993dd01198f4f5049a815cf7375febba6f9a77bb48-d_640",
     relation: "scout",
   },
 ];
