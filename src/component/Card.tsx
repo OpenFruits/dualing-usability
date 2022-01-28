@@ -21,6 +21,14 @@ export const Card: VFC<Props> = (props) => {
     if (isBookmark) toast.success("保存済みから削除しました");
   };
 
+  const DETAIL_ITEMS = [
+    { label: "会社選びの軸", data: props.student.important, key: "important" },
+    { label: "業界", data: props.student.industries, key: "industry" },
+    { label: "職種", data: props.student.occupations, key: "occupation" },
+    { label: "希望勤務地", data: props.student.locations, key: "location" },
+    { label: "強み", data: props.student.advantages, key: "advantage" },
+  ];
+
   return (
     <div className="overflow-hidden bg-white rounded border">
       <div
@@ -45,61 +53,19 @@ export const Card: VFC<Props> = (props) => {
           {`${props.student.university} ${props.student.department}`}
         </div>
       </div>
-      <div className="py-1 px-2 border-b">
-        <span className="text-xs font-bold">会社選びの軸：</span>
-        {props.student.important.map((item: string, index: number) => (
-          <span
-            key={`important_${index}`}
-            className="inline-block py-1 px-2 mr-2 text-xs font-semibold text-gray-700 bg-gray-200 rounded-full"
-          >
-            {`${item}`}
-          </span>
-        ))}
-      </div>
-      <div className="py-1 px-2 border-b">
-        <span className="text-xs font-bold">業界：</span>
-        {props.student.industries.map((item: string, index: number) => (
-          <span
-            key={`industry_${index}`}
-            className="inline-block py-1 px-2 mr-2 text-xs font-semibold text-gray-700 bg-gray-200 rounded-full"
-          >
-            {`${item}`}
-          </span>
-        ))}
-      </div>
-      <div className="py-1 px-2 border-b">
-        <span className="text-xs font-bold">職種：</span>
-        {props.student.occupations.map((item: string, index: number) => (
-          <span
-            key={`occupation_${index}`}
-            className="inline-block py-1 px-2 mr-2 text-xs font-semibold text-gray-700 bg-gray-200 rounded-full"
-          >
-            {`${item}`}
-          </span>
-        ))}
-      </div>
-      <div className="py-1 px-2 border-b">
-        <span className="text-xs font-bold">希望勤務地：</span>
-        {props.student.locations.map((item: string, index: number) => (
-          <span
-            key={`location_${index}`}
-            className="inline-block py-1 px-2 mr-2 text-xs font-semibold text-gray-700 bg-gray-200 rounded-full"
-          >
-            {`${item}`}
-          </span>
-        ))}
-      </div>
-      <div className="py-1 px-2 border-b">
-        <span className="text-xs font-bold">強み：</span>
-        {props.student.advantages.map((item: string, index: number) => (
-          <span
-            key={`advantage_${index}`}
-            className="inline-block py-1 px-2 mr-2 text-xs font-semibold text-gray-700 bg-gray-200 rounded-full"
-          >
-            {`${item}`}
-          </span>
-        ))}
-      </div>
+      {DETAIL_ITEMS.map((item) => (
+        <div key={item.key} className="py-1 px-2 border-b">
+          <span className="text-xs font-bold">{`${item.label}：`}</span>
+          {item.data.map((data: string, index: number) => (
+            <span
+              key={`${item.key}_${index}`}
+              className="inline-block py-1 px-2 mr-2 text-xs font-semibold text-gray-700 bg-gray-200 rounded-full"
+            >
+              {`${data}`}
+            </span>
+          ))}
+        </div>
+      ))}
       <div className="flex justify-start p-2">
         <Link href={`/student/${props.student.uid}`}>
           <a className="mr-2">
