@@ -181,41 +181,25 @@ const StudentId: NextPage = () => {
               )}
               <table className="my-4 w-[600px] text-sm bg-white border border-gray-300 xl:w-[800px] xl:text-lg">
                 <tbody>
-                  <tr className="border border-gray-300">
-                    <td className="p-3 w-1/4 bg-gray-100">強み、長所</td>
-                    <td className="p-3">{student?.advantages.join(", ")}</td>
-                  </tr>
-                  <tr className="border border-gray-300">
-                    <td className="p-3 bg-gray-100">企業選びの軸</td>
-                    <td className="p-3">{student?.important.join(", ")}</td>
-                  </tr>
-                  <tr className="border border-gray-300">
-                    <td className="p-3 bg-gray-100">部活、サークル</td>
-                    <td className="p-3">{student?.club}</td>
-                  </tr>
-                  <tr className="border border-gray-300">
-                    <td className="p-3 bg-gray-100">興味のある業界</td>
-                    <td className="p-3">{student?.industries.join(", ")}</td>
-                  </tr>
-                  <tr className="border border-gray-300">
-                    <td className="p-3 bg-gray-100">興味のある職種</td>
-                    <td className="p-3">{student?.occupations.join(", ")}</td>
-                  </tr>
-                  <tr className="border border-gray-300">
-                    <td className="p-3 bg-gray-100">希望勤務地</td>
-                    <td className="p-3">{student?.locations?.join(", ")}</td>
-                  </tr>
-                  <tr className="border border-gray-300">
-                    <td className="p-3 bg-gray-100">ひとことPR</td>
-                    <td className="p-3 whitespace-pre-wrap">{student?.comment}</td>
-                  </tr>
+                  {[
+                    { label: "強み、長所", data: student?.advantages.join(", ") },
+                    { label: "企業選びの軸", data: student?.important.join(", ") },
+                    { label: "部活、サークル", data: student?.club },
+                    { label: "興味のある業界", data: student?.industries.join(", ") },
+                    { label: "興味のある職種", data: student?.occupations.join(", ") },
+                    { label: "希望勤務地", data: student?.locations?.join(", ") },
+                    { label: "ひとことPR", data: student?.comment },
+                  ].map((item) => (
+                    <tr key={item.label} className="border border-gray-300">
+                      <td className="p-3 w-1/4 bg-gray-100">{item.label}</td>
+                      <td className="p-3 whitespace-pre-wrap">{item.data}</td>
+                    </tr>
+                  ))}
                 </tbody>
               </table>
               <Link href={`/`}>
                 <a>
-                  <button className="p-2 m-auto text-sm font-bold tracking-wider text-center text-white bg-blue-500 hover:bg-blue-400 rounded focus:outline-none cursor-pointer lg:mx-0">
-                    一覧に戻る
-                  </button>
+                  <Button className="p-2 text-sm">一覧に戻る</Button>
                 </a>
               </Link>
             </div>
