@@ -15,7 +15,7 @@ type ButtonType = React.ButtonHTMLAttributes<HTMLButtonElement> & Common;
 const useButtonClass = (className?: string, variant?: ButtonVariant, disabled?: boolean) => {
   const classes = useMemo(() => {
     return cc([
-      "grid place-items-center px-4 py-2 font-bold tracking-wider focus-visible:ring-2 transition duration-200 ease-in-out focus:outline-none cursor-pointer",
+      "grid place-items-center rounded p-2 font-bold tracking-wider focus-visible:ring-2 transition duration-200 ease-in-out focus:outline-none cursor-pointer",
       {
         "bg-gray-400 hover:bg-gray-400 cursor-default text-white": disabled,
         "border focus:ring-2 focus:ring-blue-400": variant === "outline" && !disabled,
