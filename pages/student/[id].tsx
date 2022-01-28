@@ -15,6 +15,8 @@ import type { Student } from "src/constants/types";
 const StudentId: NextPage = () => {
   const router = useRouter();
   const id = router.query.id;
+  const [isLoading, setIsLoading] = useState(true);
+  const loaded = () => setIsLoading(false);
   const [isOpen, setIsOpen] = useState(false);
   const onClose = () => setIsOpen(false);
   const onOpen = () => setIsOpen(true);
@@ -164,7 +166,19 @@ const StudentId: NextPage = () => {
                 </div>
               </div>
               {student?.relation === "match" && <Chat studentName={`${student?.firstName} ${student?.lastName}`} />}
-              {student && <Vimeo video={student.vimeoUrl} responsive className="my-4" />}
+              {isLoading && (
+                <div className="aspect-video grid place-items-center m-2 text-2xl text-gray-800 bg-gray-400">
+                  Loading...
+                </div>
+              )}
+              {student && (
+                <Vimeo
+                  video={student.vimeoUrl}
+                  responsive
+                  onLoaded={loaded}
+                  className={isLoading ? "hidden" : "my-4"}
+                />
+              )}
               <table className="my-4 w-[600px] text-sm bg-white border border-gray-300 xl:w-[800px] xl:text-lg">
                 <tbody>
                   <tr className="border border-gray-300">
