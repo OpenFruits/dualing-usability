@@ -34,7 +34,7 @@ export const studentList: Student[] = [
     locations: ["東京都", "愛知県", "福岡県"],
     advantages: ["達成欲"],
     comment: "よろしくお願いします。",
-    vimeoUrl: "https://vimeo.com/576374766/5f93123e40",
+    vimeoUrl: "https://vimeo.com/671016095/a552368238",
     relation: "no",
   },
   {
@@ -52,7 +52,7 @@ export const studentList: Student[] = [
     locations: ["東京都", "北海道"],
     advantages: ["努力家", "積極英", "ポシティブ"],
     comment: "よろしくお願いします。",
-    vimeoUrl: "https://vimeo.com/576374766/5f93123e40",
+    vimeoUrl: "https://vimeo.com/671016095/a552368238",
     relation: "scout",
   },
   {
@@ -70,7 +70,7 @@ export const studentList: Student[] = [
     locations: ["東京都", "愛知県", "福岡県"],
     advantages: ["達成欲"],
     comment: "よろしくお願いします。",
-    vimeoUrl: "https://vimeo.com/576374766/5f93123e40",
+    vimeoUrl: "https://vimeo.com/671016095/a552368238",
     relation: "match",
   },
   {
@@ -88,7 +88,7 @@ export const studentList: Student[] = [
     locations: ["東京都"],
     advantages: ["明るい", "ムードメーカー"],
     comment: "よろしくお願いします。",
-    vimeoUrl: "https://vimeo.com/576374766/5f93123e40",
+    vimeoUrl: "https://vimeo.com/671016095/a552368238",
     relation: "scout",
   },
 ];
