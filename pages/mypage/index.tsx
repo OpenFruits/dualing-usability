@@ -15,9 +15,6 @@ const Mypage: NextPage = () => {
       <div className="m-auto sm:w-2/3">
         <Inform />
         <Profile />
-        {/* {condition === "reserved" && <Booking />} */}
-        {/* {condition === "shooting" && <Booking />} */}
-        {/* {condition === "waiting" && <GrayBox />} */}
         <div>
           <Vimeo video={studentList[0].vimeoUrl} responsive className="m-2" />
           <ScoutList />
