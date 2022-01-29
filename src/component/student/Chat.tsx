@@ -1,6 +1,7 @@
 import clsx from "clsx";
 import type { VFC } from "react";
 import { useCallback, useEffect, useRef, useState } from "react";
+import { Button } from "src/component/Button";
 import type { Message } from "src/constants/data/chatList";
 import { chatList } from "src/constants/data/chatList";
 import { studentList } from "src/constants/data/studentList";
@@ -94,9 +95,9 @@ export const Chat: VFC<Props> = (props) => {
           className="p-1 w-5/6 h-14 leading-none rounded border border-gray-300 resize-none"
           onChange={inputComment}
         />
-        <button onClick={submit} className="mx-3 w-14 h-14 font-bold text-white bg-blue-500 rounded">
+        <Button onClick={submit} className="ml-3 w-14 h-14">
           送信
-        </button>
+        </Button>
       </div>
     </div>
   );
