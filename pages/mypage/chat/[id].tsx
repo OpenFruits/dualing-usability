@@ -20,7 +20,7 @@ const CompanyId: NextPage = () => {
         <div className="m-auto w-full sm:w-[600px] lg:w-[800px]">
           <div className="sm:flex sm:flex-row-reverse sm:justify-between">
             <div className="flex justify-end my-2 mx-2">
-              <Button className="h-10 rounded sm:shadow-md" onClick={() => router.push("/mypage")}>
+              <Button className="h-10 rounded" onClick={() => router.push("/mypage")}>
                 戻る
               </Button>
             </div>
