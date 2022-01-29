@@ -114,9 +114,7 @@ const StudentId: NextPage = () => {
           <h2 className="pb-2 mb-4 text-2xl border-b">{`${currentUser?.name} 様`}</h2>
           <Link href={`/`}>
             <a>
-              <button className="p-2 m-auto text-sm font-bold tracking-wider text-center text-white bg-blue-500 hover:bg-blue-400 rounded focus:outline-none cursor-pointer lg:mx-0">
-                一覧に戻る
-              </button>
+              <Button className="text-sm">一覧に戻る</Button>
             </a>
           </Link>
         </aside>
@@ -125,20 +123,18 @@ const StudentId: NextPage = () => {
             <h1 className="mb-4 text-3xl font-bold">学生詳細</h1>
             <div className="py-10 w-[600px] xl:w-[800px]">
               <div className="flex justify-between items-center">
-                <div>
-                  {student ? (
-                    <div>
-                      <p className="text-sm">{`${student.firstKana} ${student.lastKana}`}</p>
-                      <h2 className="mb-2 text-2xl font-bold">{`${student.firstName} ${student.lastName}`}</h2>
-                      <h2 className="mb-4 text-2xl font-bold">{`(${student.university} ${student.department})`}</h2>
-                    </div>
-                  ) : (
-                    <div>
-                      <p className="text-sm text-theme-light">{` - `}</p>
-                      <h2 className="mb-4 text-2xl font-bold text-theme-light">{` - `}</h2>
-                    </div>
-                  )}
-                </div>
+                {student ? (
+                  <div>
+                    <p className="text-sm">{`${student.firstKana} ${student.lastKana}`}</p>
+                    <h2 className="mb-2 text-2xl font-bold">{`${student.firstName} ${student.lastName}`}</h2>
+                    <h2 className="mb-4 text-2xl font-bold">{`(${student.university} ${student.department})`}</h2>
+                  </div>
+                ) : (
+                  <div>
+                    <p className="text-sm text-theme-light">{` - `}</p>
+                    <h2 className="mb-4 text-2xl font-bold text-theme-light">{` - `}</h2>
+                  </div>
+                )}
                 <div className="flex flex-col">
                   {student?.relation === "scout" && (
                     <button
