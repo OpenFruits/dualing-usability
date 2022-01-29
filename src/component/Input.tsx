@@ -1,4 +1,4 @@
-import cc from "classcat";
+import clsx from "clsx";
 import { forwardRef } from "react";
 import type { UseFormRegisterReturn } from "react-hook-form";
 
@@ -23,7 +23,7 @@ export const Input = forwardRef<HTMLInputElement, Props>((props, ref) => {
           type={props.type ?? "text"}
           placeholder={props.placeholder}
           defaultValue={props.defaultValue}
-          className={cc([
+          className={clsx([
             "border border-gray-200 rounded p-1 w-full h-10",
             {
               [`${props.option}`]: props.option,

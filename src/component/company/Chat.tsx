@@ -1,4 +1,4 @@
-import cc from "classcat";
+import clsx from "clsx";
 import type { VFC } from "react";
 import { useCallback, useEffect, useRef, useState } from "react";
 import type { Message } from "src/constants/data/chatList";
@@ -52,7 +52,7 @@ export const Chat: VFC<Props> = (props) => {
         {chat.map((item, index) => (
           <div
             key={item.timestamp}
-            className={cc([
+            className={clsx([
               {
                 ["text-right"]: item.role === "company",
                 ["text-left"]: item.role === "student",
@@ -66,7 +66,7 @@ export const Chat: VFC<Props> = (props) => {
                 <p className="text-xs">{item.role === "company" ? currentUser?.name : props.studentName}</p>
               </div>
               <p
-                className={cc([
+                className={clsx([
                   "text-sm bg-white inline-block p-2 border rounded-2xl whitespace-pre-wrap",
                   {
                     ["border-theme-dark"]: item.role === "company",

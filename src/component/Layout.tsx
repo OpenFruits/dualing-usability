@@ -1,4 +1,4 @@
-import cc from "classcat";
+import clsx from "clsx";
 import type { VFC } from "react";
 
 type Props = {
@@ -9,7 +9,7 @@ type Props = {
 export const Layout: VFC<Props> = (props) => {
   return (
     <div
-      className={cc([
+      className={clsx([
         "m-4",
         {
           [`${props.option}`]: props.option,

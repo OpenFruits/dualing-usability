@@ -1,5 +1,5 @@
 import { Switch } from "@headlessui/react";
-import cc from "classcat";
+import clsx from "clsx";
 import type { VFC } from "react";
 import { useCallback, useEffect, useState } from "react";
 import Select from "react-select";
@@ -132,7 +132,7 @@ export const CompanyLayout: VFC<Props> = (props) => {
               <button
                 disabled={!hasSearch}
                 onClick={search}
-                className={cc([
+                className={clsx([
                   "text-white font-bold text-sm p-2 ml-2 rounded",
                   {
                     ["bg-theme hover:bg-theme-light focus:outline-none"]: hasSearch,
@@ -149,7 +149,7 @@ export const CompanyLayout: VFC<Props> = (props) => {
             {OPTION_ITEMS.map((option) => (
               <div
                 key={option.type}
-                className={cc([
+                className={clsx([
                   "border p-2 mb-1",
                   {
                     ["bg-theme-light"]: showOption === option.type,

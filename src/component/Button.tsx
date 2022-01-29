@@ -1,4 +1,4 @@
-import cc from "classcat";
+import clsx from "clsx";
 import { forwardRef, useMemo } from "react";
 
 type Common = {
@@ -14,7 +14,7 @@ type ButtonType = React.ButtonHTMLAttributes<HTMLButtonElement> & Common;
 
 const useButtonClass = (className?: string, variant?: ButtonVariant, disabled?: boolean) => {
   const classes = useMemo(() => {
-    return cc([
+    return clsx([
       "grid place-items-center rounded p-2 font-bold tracking-wider focus-visible:ring-2 transition duration-200 ease-in-out focus:outline-none cursor-pointer",
       {
         "bg-gray-400 hover:bg-gray-400 cursor-default text-white": disabled,
