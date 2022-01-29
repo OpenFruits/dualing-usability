@@ -58,7 +58,7 @@ export const Footer: VFC = () => {
   return (
     <footer className="flex absolute bottom-0 justify-around py-3 w-full font-bold text-white bg-theme-dark sm:justify-end">
       <Transition appear show={isOpen} as={Fragment}>
-        <Dialog as="div" className="overflow-y-auto fixed inset-0 z-10" onClose={onClose}>
+        <Dialog as="div" className="overflow-y-auto fixed inset-0 z-30" onClose={onClose}>
           <div className="px-4 min-h-screen text-center">
             <Transition.Child
               as={Fragment}
@@ -81,7 +81,7 @@ export const Footer: VFC = () => {
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 scale-95"
             >
-              <div className="inline-block overflow-hidden px-6 my-20 w-full max-w-sm text-left align-middle bg-white rounded-2xl shadow-md transition-all">
+              <div className="inline-block overflow-hidden px-6 my-20 w-full max-w-sm text-left bg-white rounded-2xl shadow-md transition-all">
                 <Dialog.Title as="h3" className="py-4 text-lg font-bold leading-6 text-gray-900">
                   退会処理
                 </Dialog.Title>
