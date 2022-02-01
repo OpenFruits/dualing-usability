@@ -8,7 +8,7 @@ type Props = UseFormRegisterReturn & {
   error?: string;
   placeholder?: string;
   defaultValue?: string;
-  option?: string;
+  className?: string;
 };
 
 export const Input = forwardRef<HTMLInputElement, Props>((props, ref) => {
@@ -26,7 +26,7 @@ export const Input = forwardRef<HTMLInputElement, Props>((props, ref) => {
           className={clsx([
             "border border-gray-200 rounded p-1 w-full h-10",
             {
-              [`${props.option}`]: props.option,
+              [`${props.className}`]: props.className,
             },
           ])}
           name={props.name}
