@@ -3,7 +3,7 @@ import type { VFC } from "react";
 
 type Props = {
   children: React.ReactNode;
-  option?: string;
+  className?: string;
 };
 
 export const Layout: VFC<Props> = (props) => {
@@ -12,7 +12,7 @@ export const Layout: VFC<Props> = (props) => {
       className={clsx([
         "m-4",
         {
-          [`${props.option}`]: props.option,
+          [`${props.className}`]: props.className,
         },
       ])}
     >
