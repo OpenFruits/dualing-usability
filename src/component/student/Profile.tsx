@@ -4,7 +4,6 @@ import { useRouter } from "next/router";
 import type { VFC } from "react";
 import { Fragment, useState } from "react";
 import { Button } from "src/component/Button";
-import { Layout } from "src/component/Layout";
 import { studentList } from "src/constants/data/studentList";
 
 export const Profile: VFC = () => {
@@ -28,7 +27,7 @@ export const Profile: VFC = () => {
   ];
 
   return (
-    <Layout>
+    <div className="m-4">
       <div className="flex justify-between items-center">
         {studentList[0] && (
           <div>
@@ -108,6 +107,6 @@ export const Profile: VFC = () => {
           </div>
         </Dialog>
       </Transition>
-    </Layout>
+    </div>
   );
 };
