@@ -17,7 +17,7 @@ const CompanyId: NextPage = () => {
       <Header pageTitle="チャット" href="/mypage" />
       <div className="my-4 mx-auto w-full sm:w-[600px] lg:w-[800px]">
         <div className="sm:flex sm:flex-row-reverse sm:justify-between">
-          <div className="flex justify-end my-2 mx-2">
+          <div className="flex justify-end m-2">
             <Button className="h-10 rounded" onClick={() => router.push("/mypage")}>
               戻る
             </Button>
