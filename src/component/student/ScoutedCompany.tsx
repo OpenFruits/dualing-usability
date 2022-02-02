@@ -15,22 +15,6 @@ export const ScoutedCompany: VFC<Props> = (props) => {
   const onClose = () => setIsOpen(false);
   const onOpen = () => setIsOpen(true);
 
-  // const getRelation = async () => {
-  //   const ref = collection(db, "relations");
-  //   const q = query(
-  //     ref,
-  //     where("studentId", "==", currentUser?.uid),
-  //     where("companyId", "==", props.company.id),
-  //     where("condition", "==", "scout")
-  //   );
-  //   const snapShot = await getDocs(q);
-  //   setRelationId(snapShot.docs[0].id);
-  // };
-
-  // useEffect(() => {
-  //   getRelation();
-  // }, [currentUser]);
-
   const matching = async () => {
     // if (confirm(`${props.company.name}とマッチングします。よろしいですか？`)) {
     //   const relationsRef = doc(db, "relations", relationId);
